@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     border: 5px solid black;
+    justify-content: center;
+    align-items: center;
 }
 
 .row1 {
