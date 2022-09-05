@@ -1,7 +1,11 @@
-let display = document.getElementByClassName("display");
-let add = document.getElementByClassName("add-button");
-let subtract = document.getElementByClassName("sub-button");
-let multiply = document.getElementByClassName("mult-button");
-let divide = document.getElementByClassName("div-button");
-let equals = document.getElementByClassName("equals-button");
-let clear = document.getElementByClassName("clear");
+let display = document.querySelector(".display");
+let add = document.querySelector(".add-button");
+let subtract = document.querySelector(".sub-button");
+let multiply = document.querySelector(".mult-button");
+let divide = document.querySelector(".div-button");
+let equals = document.querySelector(".equals-button");
+let clear = document.querySelector(".clear");
+
+add.addEventListener("click", () => {
+    alert("clicked");
+})
