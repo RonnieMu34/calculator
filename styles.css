@@ -4,20 +4,25 @@
     border: 5px solid black;
     justify-content: center;
     align-items: center;
+    gap: 3px;
 }
 
 .row1 {
     display: flex;
+    gap: 3px;
 }
 
 .row2 {
     display: flex;
+    gap: 3px;
 }
 
 .row3 {
     display: flex;
+    gap: 3px;
 }
 
 .row4 {
     display: flex;
+    gap: 3px;
 }
