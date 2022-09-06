@@ -3,7 +3,7 @@ let display = document.querySelector(".display");
 // let subtract = document.querySelector(".sub-button");
 // let multiply = document.querySelector(".mult-button");
 // let divide = document.querySelector(".div-button");
-// let equals = document.querySelector(".equals-button");
+let equals = document.querySelector(".equals-button");
 let clear = document.querySelector(".clear");
 
 let firstNum = "";
@@ -17,7 +17,6 @@ for (let i = 0; i < numButton.length; i++) {
     numButton[i].addEventListener("click", () => {
         var pressedNum = (numButton[i].innerHTML).toString();
         firstNum += pressedNum;
-        console.log(firstNum);
     })
     
 }
