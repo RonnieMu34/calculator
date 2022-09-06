@@ -6,6 +6,18 @@ let divide = document.querySelector(".div-button");
 let equals = document.querySelector(".equals-button");
 let clear = document.querySelector(".clear");
 
-add.addEventListener("click", () => {
-    alert("clicked");
-})
+let firstNum = "";
+let secondNum = "";
+let operator = "";
+
+let numButton = document.getElementsByClassName("number");
+
+for (let i = 0; i < numButton.length; i++) {
+    numButton[i].addEventListener("click", () => {
+        var pressedNum = (numButton[i].innerHTML).toString();
+        firstNum += pressedNum;
+        console.log(firstNum);
+    })
+    
+}
+
