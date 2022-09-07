@@ -26,3 +26,22 @@ for (let i = 0; i < numButton.length; i++) {
     }
 }
 
+function operate(operator, num1, num2) {
+    var result = 0;
+    switch(operator) {
+        case "+":
+            result = (num1 + num2);
+            break;
+        case "-":
+            resuolt = (num1 - num2);
+            break;
+        case "x":
+            result = (num1 * num2);
+            break;
+        case "÷":
+            result = (num1 / num2);
+            break;
+        default:
+            alert("Please enter 2 values");                
+    }
+}
