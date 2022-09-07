@@ -14,10 +14,15 @@ let opButtons = document.getElementsByClassName("operator");
 let numButton = document.getElementsByClassName("number");
 
 for (let i = 0; i < numButton.length; i++) {
-    numButton[i].addEventListener("click", () => {
-        var pressedNum = (numButton[i].innerHTML).toString();
-        firstNum += pressedNum;
-    })
-    
+    let opPress = false;
+    let equalPress = false;
+
+    while (opPress == false && equalPress == false) {
+        
+        numButton[i].addEventListener("click", () => {
+            var pressedNum = numButton[i].innerHTML;
+            firstNum += pressedNum;
+        });
+    }
 }
 
