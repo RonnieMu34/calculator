@@ -14,16 +14,25 @@ let opButtons = document.getElementsByClassName("operator");
 let numButton = document.getElementsByClassName("number");
 
 let opPress = false;
+var currOp = "";
 let equalPress = false;
 
-for (let i = 0; i < numButton.length; i++) {
+for (let y = 0; y < opButtons.length; y++) {
+    opButtons[y].addEventListener("click", () => {
+        currOp = opButtons[y].innerHTML;
+        opPress = true;
+    })
+}
 
-    while (opPress == false && equalPress == false) {
+for (let i = 0; i < numButton.length; i++) {
+    if (opPress == false && equalPress == false) {
         
         numButton[i].addEventListener("click", () => {
             var pressedNum = numButton[i].innerHTML;
             firstNum += pressedNum;
         });
+
+
     }
 }
 
@@ -34,7 +43,7 @@ function operate(operator, num1, num2) {
             result = (num1 + num2);
             break;
         case "-":
-            resuolt = (num1 - num2);
+            result = (num1 - num2);
             break;
         case "x":
             result = (num1 * num2);
