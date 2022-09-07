@@ -13,9 +13,10 @@ let operator = "";
 let opButtons = document.getElementsByClassName("operator");
 let numButton = document.getElementsByClassName("number");
 
+let opPress = false;
+let equalPress = false;
+
 for (let i = 0; i < numButton.length; i++) {
-    let opPress = false;
-    let equalPress = false;
 
     while (opPress == false && equalPress == false) {
         
