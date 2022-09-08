@@ -23,11 +23,12 @@ for (let y = 0; y < opButtons.length; y++) {
 }
 
 
-equals.addEventListener("click", () => {
-    equalPress = true;
-})
-
+// (READ) FOR SOME REASON ONLY POPPING OUT RESULT AFTER PRESSING A NUMBER BUTTON AFTER
+//EQUALS BUTTON
 for (let i = 0; i < numButton.length; i++) {
+    equals.addEventListener("click", () => {
+        equalPress = true;
+    })
     numButton[i].addEventListener("click", () => {
         if (opPress == false) {
             firstNum += numButton[i].innerHTML;
@@ -43,32 +44,8 @@ for (let i = 0; i < numButton.length; i++) {
             }
         }
         
-    });
+    });   
 }
-
-// for (let i = 0; i < numButton.length; i++) {
-//         var pressedNum = "";
-//         numButton[i].addEventListener("click", () => {
-//             if (opPress == false) {
-//                 pressedNum = numButton[i].innerHTML;
-//                 firstNum += pressedNum;
-//                 console.log(`First is ${firstNum}`);
-//             } else if (opPress == true) {
-//                 presedNum = "";
-//                 console.log(`Operator is ${currOp}`);
-//                     if (equalPress == false) {
-//                         secondNum += pressedNum;
-//                         console.log(`Second is ${secondNum}`);
-//                     } else if (equalPress == true) {
-//                         firstNum = parseInt(firstNum);
-//                         secondNum = parseInt(secondNum);
-//                         console.log(`${firstNum} -> ${secondNum}`)
-                        
-//                     }
-//                     console.log(operate(currOp, firstNum, secondNum));
-//             }
-//         });  
-// }
 
 function operate(operator, num1, num2) {
     let result = 0;
