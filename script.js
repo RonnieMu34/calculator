@@ -22,13 +22,17 @@ for (let y = 0; y < opButtons.length; y++) {
     });
 }
 
+equals.addEventListener("click", () => {
+    firstNum = parseInt(firstNum);
+    secondNum = parseInt(secondNum);
+    result = operate(currOp, firstNum, secondNum);
+    console.log(result);
+})
+
 
 // (READ) FOR SOME REASON ONLY POPPING OUT RESULT AFTER PRESSING A NUMBER BUTTON AFTER
 //EQUALS BUTTON
 for (let i = 0; i < numButton.length; i++) {
-    equals.addEventListener("click", () => {
-        equalPress = true;
-    })
     numButton[i].addEventListener("click", () => {
         if (opPress == false) {
             firstNum += numButton[i].innerHTML;
@@ -37,13 +41,8 @@ for (let i = 0; i < numButton.length; i++) {
             if (equalPress == false) {
                 secondNum += numButton[i].innerHTML;
                 console.log(`second ${secondNum}`);
-            } else if (equalPress == true) {
-                firstNum = parseInt(firstNum);
-                secondNum = parseInt(secondNum);
-                console.log(operate(currOp, firstNum, secondNum));
-            }
-        }
-        
+            } 
+        }  
     });   
 }
 
