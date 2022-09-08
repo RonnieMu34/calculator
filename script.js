@@ -23,8 +23,8 @@ for (let y = 0; y < opButtons.length; y++) {
 }
 
 equals.addEventListener("click", () => {
-    firstNum = parseInt(firstNum);
-    secondNum = parseInt(secondNum);
+    firstNum = parseFloat(firstNum);
+    secondNum = parseFloat(secondNum);
     result = operate(currOp, firstNum, secondNum);
     opPress = false;
     secondNum = secondNum.toString();
