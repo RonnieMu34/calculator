@@ -26,6 +26,10 @@ equals.addEventListener("click", () => {
     firstNum = parseInt(firstNum);
     secondNum = parseInt(secondNum);
     result = operate(currOp, firstNum, secondNum);
+    opPress = false;
+    secondNum = secondNum.toString();
+    secondNum = "";
+    firstNum = result;
     console.log(result);
 })
 
