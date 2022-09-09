@@ -2,8 +2,8 @@ let display = document.querySelector(".display");
 let equals = document.getElementById("equals-button");
 let clear = document.querySelector(".clear");
 
-let firstNum = "";
-let secondNum = "";
+var currResult = "";
+var nextNum = "";
 let operator = "";
 
 let opButtons = document.getElementsByClassName("operator");
@@ -16,43 +16,45 @@ var pressedNum = "";
 
 
 for (let y = 0; y < opButtons.length; y++) {
+    let nextOp = "";
     opButtons[y].addEventListener("click", () => {
-        currOp = opButtons[y].innerHTML;
-        opPress = true;
-    });
+        if (nextNum == "") {
+            currOp = opButtons[y].innerHTML;
+            console.log(`${currOp} pressed`);
+        }
+        if (nextNum != "") {
+            nextOp = opButtons[y].innerHTML;
+            currResult = operate(currOp, currResult, nextNum);
+            nextNum = "";
+            currOp = nextOp;
+            console.log(currResult);
+        }
+    })
 }
 
 equals.addEventListener("click", () => {
-    result = operate(currOp, firstNum, secondNum);
-    opPress = false;
-    secondNum = secondNum.toString();
-    secondNum = "";
-    firstNum = result;
+    result = operate(currOp, currResult, nextNum);
+    currResult = result;
     console.log(result);
 })
 
-
-// (READ) FOR SOME REASON ONLY POPPING OUT RESULT AFTER PRESSING A NUMBER BUTTON AFTER
-//EQUALS BUTTON
 for (let i = 0; i < numButton.length; i++) {
     numButton[i].addEventListener("click", () => {
-        if (opPress == false) {
-            firstNum += numButton[i].innerHTML;
-            console.log(`First ${firstNum}`);
-        } else if (opPress == true) {
-
-                secondNum += numButton[i].innerHTML;
-                console.log(`second ${secondNum}`);
-            
-        }  
-    });   
+        if (currResult == "") {
+            currResult = numButton[i].innerHTML;
+            console.log(currResult);
+        } else {
+            nextNum = numButton[i].innerHTML;
+            console.log(nextNum);
+        }
+    });
 }
 
 function operate(operator, num1, num2) {
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
     let result = 0;
-    switch(operator) {
+    switch (operator) {
         case "+":
             result = (num1 + num2);
             break;
@@ -66,7 +68,7 @@ function operate(operator, num1, num2) {
             result = (num1 / num2);
             break;
         default:
-            alert("Please enter 2 values");                
+            alert("Please enter 2 values");
     }
     return result;
 }
