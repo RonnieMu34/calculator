@@ -27,6 +27,7 @@ for (let y = 0; y < opButtons.length; y++) {
             currResult = operate(currOp, currResult, nextNum);
             nextNum = "";
             currOp = nextOp;
+            display.innerHTML = currResult;
             console.log(currResult);
         }
     })
@@ -36,6 +37,7 @@ equals.addEventListener("click", () => {
     result = operate(currOp, currResult, nextNum);
     nextNum = "";
     currResult = result;
+    display.innerHTML = result;
     console.log(result);
 })
 
@@ -43,9 +45,11 @@ for (let i = 0; i < numButton.length; i++) {
     numButton[i].addEventListener("click", () => {
         if (currOp == "") {
             currResult += numButton[i].innerHTML;
+            display.innerHTML = currResult;
             console.log(`currResult is ${currResult}`);
         } else {
             nextNum += numButton[i].innerHTML;
+            display.innerHTML = nextNum;
             console.log(`nextNum is ${nextNum}`);
         }
     });
