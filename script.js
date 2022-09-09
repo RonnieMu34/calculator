@@ -34,18 +34,19 @@ for (let y = 0; y < opButtons.length; y++) {
 
 equals.addEventListener("click", () => {
     result = operate(currOp, currResult, nextNum);
+    nextNum = "";
     currResult = result;
     console.log(result);
 })
 
 for (let i = 0; i < numButton.length; i++) {
     numButton[i].addEventListener("click", () => {
-        if (currResult == "") {
-            currResult = numButton[i].innerHTML;
-            console.log(currResult);
+        if (currOp == "") {
+            currResult += numButton[i].innerHTML;
+            console.log(`currResult is ${currResult}`);
         } else {
-            nextNum = numButton[i].innerHTML;
-            console.log(nextNum);
+            nextNum += numButton[i].innerHTML;
+            console.log(`nextNum is ${nextNum}`);
         }
     });
 }
