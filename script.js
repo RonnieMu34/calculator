@@ -14,6 +14,13 @@ var currOp = "";
 var equalPress = false;
 var pressedNum = "";
 
+clear.addEventListener("click", () => {
+    display.innerHTML = "0";
+    currOp = "";
+    nextOp = "";
+    currResult = "";
+    nextNum = "";
+})
 
 for (let y = 0; y < opButtons.length; y++) {
     let nextOp = "";
