@@ -47,3 +47,9 @@ button {
     font-weight: bold;
     font-size: 15px;
 }
+
+.display {
+    border: 3px solid black;
+    width: 150px;
+    height: 30px;
+}
