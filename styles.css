@@ -50,8 +50,9 @@ button {
 
 .display {
     border: 2px solid black;
-    width: 150px;
+    width: 175px;
     height: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
+    background-color: rgb(6, 73, 64);
 }
