@@ -59,3 +59,11 @@ button {
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    background-color: rgb(25, 34, 48);
+}
