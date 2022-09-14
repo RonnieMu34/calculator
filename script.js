@@ -33,7 +33,7 @@ for (let y = 0; y < opButtons.length; y++) {
             currResult = operate(currOp, currResult, nextNum);
             nextNum = "";
             currOp = nextOp;
-            display.innerHTML = currResult;
+            display.innerHTML = currResult.toFixed(3);
         }
     })
 }
@@ -42,7 +42,7 @@ equals.addEventListener("click", () => {
     result = operate(currOp, currResult, nextNum);
     nextNum = "";
     currResult = result;
-    display.innerHTML = result.toFixed(8);
+    display.innerHTML = result.toFixed(3);
 })
 
 for (let i = 0; i < numButton.length; i++) {
