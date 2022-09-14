@@ -27,7 +27,6 @@ for (let y = 0; y < opButtons.length; y++) {
     opButtons[y].addEventListener("click", () => {
         if (nextNum == "") {
             currOp = opButtons[y].innerHTML;
-            console.log(`${currOp} pressed`);
         }
         if (nextNum != "") {
             nextOp = opButtons[y].innerHTML;
@@ -35,7 +34,6 @@ for (let y = 0; y < opButtons.length; y++) {
             nextNum = "";
             currOp = nextOp;
             display.innerHTML = currResult;
-            console.log(currResult);
         }
     })
 }
@@ -45,7 +43,6 @@ equals.addEventListener("click", () => {
     nextNum = "";
     currResult = result;
     display.innerHTML = result.toFixed(8);
-    console.log(result);
 })
 
 for (let i = 0; i < numButton.length; i++) {
@@ -53,11 +50,9 @@ for (let i = 0; i < numButton.length; i++) {
         if (currOp == "") {
             currResult += numButton[i].innerHTML;
             display.innerHTML = currResult;
-            console.log(`currResult is ${currResult}`);
         } else {
             nextNum += numButton[i].innerHTML;
             display.innerHTML = nextNum;
-            console.log(`nextNum is ${nextNum}`);
         }
     });
 }
