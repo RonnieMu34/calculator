@@ -44,7 +44,7 @@ equals.addEventListener("click", () => {
     result = operate(currOp, currResult, nextNum);
     nextNum = "";
     currResult = result;
-    display.innerHTML = result;
+    display.innerHTML = result.toFixed(8);
     console.log(result);
 })
 
