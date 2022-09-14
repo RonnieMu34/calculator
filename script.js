@@ -24,6 +24,7 @@ clear.addEventListener("click", () => {
     nextOp = "";
     currResult = "";
     nextNum = "";
+    decimalPressed = false;
 })
 
 decimal.addEventListener("click", () => {
@@ -32,8 +33,8 @@ decimal.addEventListener("click", () => {
             currResult += decimal.innerHTML;
             display.innerHTML = currResult;
         } else {
-            nextNum += numButton[i].innerHTML;
-            display.innerHTML = nextNum.innerHTML;
+            nextNum += decimal.innerHTML;
+            display.innerHTML = nextNum;
         }
         decimalPressed = true;
     } else {
@@ -44,6 +45,7 @@ decimal.addEventListener("click", () => {
 for (let y = 0; y < opButtons.length; y++) {
     let nextOp = "";
     opButtons[y].addEventListener("click", () => {
+        decimalPressed = false;
         digitsInput = 0;
         if (nextNum == "") {
             currOp = opButtons[y].innerHTML;
@@ -59,6 +61,7 @@ for (let y = 0; y < opButtons.length; y++) {
 }
 
 equals.addEventListener("click", () => {
+    decimalPressed = false;
     result = operate(currOp, currResult, nextNum);
     nextNum = "";
     currResult = result;
