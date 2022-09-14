@@ -1,6 +1,7 @@
 let display = document.querySelector(".display");
 let equals = document.getElementById("equals-button");
 let clear = document.querySelector(".clear");
+let decimal = document.querySelector(".decimal");
 
 var currResult = "";
 var nextNum = "";
@@ -14,6 +15,7 @@ var currOp = "";
 var equalPress = false;
 var pressedNum = "";
 var digitsInput = 0;
+var decimalPressed = false;
 
 clear.addEventListener("click", () => {
     digitsInput = 0;
@@ -22,6 +24,21 @@ clear.addEventListener("click", () => {
     nextOp = "";
     currResult = "";
     nextNum = "";
+})
+
+decimal.addEventListener("click", () => {
+    if (decimalPressed == false) {
+        if (currOp == "") {
+            currResult += decimal.innerHTML;
+            display.innerHTML = currResult;
+        } else {
+            nextNum += numButton[i].innerHTML;
+            display.innerHTML = nextNum.innerHTML;
+        }
+        decimalPressed = true;
+    } else {
+        alert("Decimal point already exists.");
+    }
 })
 
 for (let y = 0; y < opButtons.length; y++) {
