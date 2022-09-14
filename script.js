@@ -16,6 +16,7 @@ var pressedNum = "";
 var digitsInput = 0;
 
 clear.addEventListener("click", () => {
+    digitsInput = 0;
     display.innerHTML = "0";
     currOp = "";
     nextOp = "";
@@ -35,7 +36,7 @@ for (let y = 0; y < opButtons.length; y++) {
             currResult = operate(currOp, currResult, nextNum);
             nextNum = "";
             currOp = nextOp;
-            display.innerHTML = currResult.toFixed(3);
+            display.innerHTML = Number(currResult.toFixed(3));
         }
     })
 }
@@ -44,7 +45,7 @@ equals.addEventListener("click", () => {
     result = operate(currOp, currResult, nextNum);
     nextNum = "";
     currResult = result;
-    display.innerHTML = result.toFixed(3);
+    display.innerHTML = Number(result.toFixed(3));
 })
 
 for (let i = 0; i < numButton.length; i++) {
