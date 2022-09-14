@@ -78,7 +78,18 @@ function operate(operator, num1, num2) {
             result = (num1 * num2);
             break;
         case "÷":
-            result = (num1 / num2);
+            if (num2 == 0) {
+                digitsInput = 0;
+                display.innerHTML = "0";
+                currOp = "";
+                nextOp = "";
+                currResult = "";
+                nextNum = "";
+                result = "";
+                alert("Hey. Stop that >:(");
+            } else {
+                result = (num1 / num2);
+            }
             break;
         default:
             alert("Please enter 2 values");
