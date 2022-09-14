@@ -13,6 +13,7 @@ var opPress = false;
 var currOp = "";
 var equalPress = false;
 var pressedNum = "";
+var digitsInput = 0;
 
 clear.addEventListener("click", () => {
     display.innerHTML = "0";
@@ -25,6 +26,7 @@ clear.addEventListener("click", () => {
 for (let y = 0; y < opButtons.length; y++) {
     let nextOp = "";
     opButtons[y].addEventListener("click", () => {
+        digitsInput = 0;
         if (nextNum == "") {
             currOp = opButtons[y].innerHTML;
         }
@@ -47,7 +49,10 @@ equals.addEventListener("click", () => {
 
 for (let i = 0; i < numButton.length; i++) {
     numButton[i].addEventListener("click", () => {
-        if (currOp == "") {
+        digitsInput++;
+        if (digitsInput >= 8) {
+            currResult += "";
+        } else if (currOp == "") {
             currResult += numButton[i].innerHTML;
             display.innerHTML = currResult;
         } else {
